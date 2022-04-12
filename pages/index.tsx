@@ -4,10 +4,10 @@ import Masthead from '../components/masthead'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div>
       <Masthead />
       <AboutUs />
-    </>
+    </div>
   )
 }
 
