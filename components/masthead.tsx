@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ScrollContext } from '../utils/scroll-observer'
 
 const Masthead: React.FC = () => {
+  const [imageLoaded, setImageLoaded] = useState(false)
   const refContainer = useRef<HTMLDivElement>(null)
   const { scrollY } = useContext(ScrollContext)
 
@@ -13,9 +14,14 @@ const Masthead: React.FC = () => {
   if (elContainer) {
     progress = Math.min(1, scrollY / elContainer.clientHeight)
   }
+
+  const handleImageLoaded = useCallback(() => {
+    setImageLoaded(true)
+  }, [])
+
   return (
     <div
-      className="sticky top-0 -z-10 flex min-h-screen flex-col items-center justify-center bg-white"
+      className="sticky top-0 -z-10 flex min-h-screen flex-col items-center justify-center"
       ref={refContainer}
       style={{ transform: `translateY(-${progress * 20}vh)` }}
     >
@@ -28,7 +34,11 @@ const Masthead: React.FC = () => {
       >
         <source src="/assets/masthead-bg.mp4" />
       </video>
-      <div className={`flex-grow-0 pt-10 transition-opacity duration-1000`}>
+      <div
+        className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <Image
           src="/assets/logo.svg"
           width={128 / 3}
@@ -42,12 +52,17 @@ const Masthead: React.FC = () => {
           <span>App Development</span> <span>done right.</span>
         </h2>
       </div>
-      <div className="flex-grow-0 pb-20 transition-all duration-1000 md:pb-10">
+      <div
+        className={`flex-grow-0 pb-20 transition-all duration-1000 md:pb-10 ${
+          imageLoaded ? 'opacity-100' : '-translate-y-10 opacity-0'
+        }`}
+      >
         <Image
           src="/assets/arrow-down.webp"
           width={188 / 3}
           height={105 / 3}
           alt="scroll down"
+          onLoadingComplete={handleImageLoaded}
         />
       </div>
     </div>
