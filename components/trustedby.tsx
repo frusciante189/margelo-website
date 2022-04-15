@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef, useContext } from 'react'
+import ClientLogos from './client-logos'
 
 const TrustedBy: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const TrustedBy: React.FC = () => {
             some of the apps you use daily
           </span>
         </h3>
-        <div>logos</div>
+        <ClientLogos />
       </div>
       <div className="flex flex-col items-center justify-center">
         <div className="container mx-auto lg:max-w-[70%] lg:px-10">
