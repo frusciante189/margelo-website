@@ -1,10 +1,13 @@
 import React, { useRef, useContext } from 'react'
 import ClientLogos from './client-logos'
 import Testimonials from './testimonials'
+import s from '../styles/trustedby.module.css'
 
 const TrustedBy: React.FC = () => {
   return (
-    <section className="flex min-h-screen flex-col justify-center gap-16 bg-white md:gap-32">
+    <section
+      className={`flex min-h-screen flex-col justify-center gap-16 bg-white md:gap-32 ${s.bg}`}
+    >
       <div className="flex-1"></div>
       <div className="flex flex-col items-center justify-center">
         <h3 className="mb-10 text-center text-xl font-bold">
