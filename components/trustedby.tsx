@@ -1,5 +1,6 @@
 import React, { useRef, useContext } from 'react'
 import ClientLogos from './client-logos'
+import Testimonials from './testimonials'
 
 const TrustedBy: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const TrustedBy: React.FC = () => {
           </h3>
         </div>
       </div>
-      <div>Testimonials</div>
+      <Testimonials />
       <div className="flex-1 bg-black"></div>
     </section>
   )
