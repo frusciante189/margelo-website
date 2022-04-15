@@ -19,7 +19,7 @@ const Member: React.FC<Props> = ({ id, name, socialId, link }) => {
         height={1555}
       />
       <div className="text-2xl xl:text-3xl">{name}</div>
-      <div className="text-2xl">
+      <div className="text-xl lg:text-2xl">
         <Link href={link}>
           <a target="_blank">{socialId}</a>
         </Link>

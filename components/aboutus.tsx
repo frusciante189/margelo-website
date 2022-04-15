@@ -67,17 +67,17 @@ const data = [
 const AboutUs: React.FC = () => {
   return (
     <section className={`flex flex-col bg-white py-20 text-3xl md:text-4xl`}>
-      <div className="container mx-auto px-11">
+      <div className="container mx-auto px-11 ">
         <p className="mx-auto max-w-5xl text-4xl leading-tight tracking-tight">
           <strong>We will help you ship better apps, faster.</strong> Our team
           of expert engineers has created the best user experiences in some of
           the most popular apps worldwide.
         </p>
       </div>
-      <div className="container mx-auto mt-28 px-11 text-center">
+      <div className="container mx-auto mt-28 px-3 text-center lg:px-11">
         <h2>Our Team</h2>
         <div className="mt-2">the &ldquo;spec-ops&rdquo;</div>
-        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-20 xl:grid-cols-5">
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-20 xl:grid-cols-5">
           {data.map((item, index) => {
             return (
               <Member
